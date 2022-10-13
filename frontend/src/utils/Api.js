@@ -102,9 +102,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-45',
+  baseUrl: 'https://api.kazarinov.mesto.nomoredomains.icu',
   headers: {
-    authorization: 'c902ae4a-b71e-4191-acb5-95e4c86f4c9b',
     'Content-Type': 'application/json'
   }
 });

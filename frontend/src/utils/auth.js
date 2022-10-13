@@ -1,4 +1,4 @@
-const BASE_URL = 'https://auth.nomoreparties.co';
+const BASE_URL = 'https://api.kazarinov.mesto.nomoredomains.icu';
 
 const checkAnswer = (res) => {
   if(res.ok) {
