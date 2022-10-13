@@ -48,3 +48,16 @@ export const getUserData = async (token) => {
   const data = await checkAnswer(res);
   return data;
 }
+
+export const signOut = async () => {
+  const res = await fetch(`${BASE_URL}/signout`, {
+    credentials: 'include',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+
+  const data = await checkAnswer(res);
+  return data;
+} 

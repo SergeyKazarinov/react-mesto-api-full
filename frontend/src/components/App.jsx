@@ -15,7 +15,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import Register from './Register';
 import Login from './Login';
 import InfoTooltip from './popup/InfoTooltip';
-import { getUserData, authorize, register } from "../utils/auth";
+import { getUserData, authorize, register, signOut } from "../utils/auth";
 import AcceptRegist from '../images/Accept-registration.png';
 import RejectRegist from '../images/rejectRegistration.png'
 
@@ -179,8 +179,9 @@ function App({history}) {
       });
   }
 
-  const handleSignOut = () => {
+  const handleSignOut = async () => {
     if(localStorage.getItem('token')) {
+      const res = await signOut();
       localStorage.removeItem('token')
       setLoggedIn(false);
       setUserEmail('');
