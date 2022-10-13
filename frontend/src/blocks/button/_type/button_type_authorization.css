@@ -1,0 +1,25 @@
+.button_type_authorization {
+  width: 100%;
+  min-height: 50px;
+  background-color: #fff;
+  color: #000;
+  margin-top: 216px;
+  border: 0;
+  border-radius: 2px;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.button_type_authorization:hover {
+  opacity: 0.8;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 540px) {
+  .button_type_authorization {
+    min-height: 46px;
+    margin-top: 173px;
+    font-size: 16px;
+    line-height: 19.36px;
+  }
+}

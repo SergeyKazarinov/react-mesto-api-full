@@ -1,0 +1,22 @@
+.header__button_opened .header__line:first-of-type {
+  transform: rotate(405deg) translate(5.5px, 6px);
+  transition: transform, 1s;
+  width: 22px;
+}
+
+.header__button_opened .header__line:nth-of-type(2) {
+  transform: translate(-50px, 0);
+  transition: transform, 0.5s;
+  opacity: 0;
+}
+
+.header__button_opened:hover .header__line:nth-of-type(2) {
+  transform: translate(-50px, 0);
+  transition: transform, 0.5s;
+}
+
+.header__button_opened .header__line:last-of-type {
+  transform: rotate(-405deg) translate(5px, -6px);
+  transition: transform, 1s;
+  width: 22px;
+}

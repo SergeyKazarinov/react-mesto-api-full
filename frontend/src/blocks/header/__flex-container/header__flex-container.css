@@ -1,0 +1,12 @@
+.header__flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 31.6px;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 540px) {
+  .header__flex-container {
+    margin-top: 28px;
+  }
+}

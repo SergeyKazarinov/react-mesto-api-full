@@ -1,0 +1,10 @@
+.sign-up__container {
+  width: 358px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 540px) {
+  .sign-up__container {
+    width: 220px;
+  }
+}

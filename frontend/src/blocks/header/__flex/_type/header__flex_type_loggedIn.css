@@ -1,0 +1,8 @@
+@media screen and (max-width: 540px) {
+  .header__flex_type_loggedIn {
+    overflow: hidden;
+    visibility: none;
+    opacity: 0;
+    display: none;
+  }
+}

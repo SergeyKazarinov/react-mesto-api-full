@@ -1,0 +1,22 @@
+.header__button {
+  width: 24px;
+  height: 24px;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  z-index: 4;
+  border: 0;
+  cursor: pointer;
+  visibility: visible;
+  display: none;
+}
+
+@media screen and (max-width: 540px) {
+  .header__button {
+    visibility: visible;
+    margin-right: 30px;
+  }
+}

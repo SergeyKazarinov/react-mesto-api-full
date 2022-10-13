@@ -1,0 +1,16 @@
+.header__line:first-of-type {
+  transform: rotate(0deg) translate(0, 0);
+  transition: transform, 1s;
+  width: 24px;
+}
+
+.header__line:nth-of-type(2) {
+  transform: translate(0, 0);
+  transition: transform, 0.5s;
+}
+
+.header__line:last-of-type {
+  transform: rotate(0deg) translate(0, 0);
+  transition: transform, 1s;
+  width: 24px;
+}
