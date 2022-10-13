@@ -38,6 +38,7 @@ export const authorize = async (email, password) => {
 export const getUserData = async (token) => {
   const res = await fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       "Authorization" : `Bearer ${token}`
