@@ -111,7 +111,7 @@ class Api {
 const api = new Api({
   baseUrl: 'https://api.kazarinov.mesto.nomoredomains.icu',
   headers: {
-    Authorization: `Bearer ${localStorage.getItem('token')}`,
+    'Authorization': `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json'
   }
 });
