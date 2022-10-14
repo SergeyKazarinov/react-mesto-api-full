@@ -10,21 +10,13 @@ const router = require('./routes');
 const corsMiddleware = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/loger');
 
-// const allowedCors = [
-//   'https://kazarinov.mesto.nomoredomains.icu',
-//   'http://kazarinov.mesto.nomoredomains.icu',
-//   'http://localhost:3000',
-//   'https://localhost:3000',
-// ];
-
 const { PORT = 3000 } = process.env;
 
 const app = express();
 app.use(corsMiddleware);
-// app.use(cors({ origin: allowedCors }));
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
-app.use(bodyParser.json());
+app.use(express.bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
