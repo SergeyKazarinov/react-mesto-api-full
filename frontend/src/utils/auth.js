@@ -11,6 +11,7 @@ const checkAnswer = (res) => {
 export const register = async (email, password) => {
   const res = await fetch(`${BASE_URL}/signup`, {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'

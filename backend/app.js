@@ -1,8 +1,9 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const express = require('express');
 const cookieParser = require('cookie-parser');
+const express = require('express');
+
 const { errors } = require('celebrate');
 const err = require('./middlewares/error');
 const router = require('./routes');
