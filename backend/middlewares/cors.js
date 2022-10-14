@@ -1,12 +1,12 @@
 const allowedCors = [
   'https://kazarinov.mesto.nomoredomains.icu',
   'http://kazarinov.mesto.nomoredomains.icu',
-  'localhost:3000',
+  'http://localhost:3000',
+  'https://localhost:3000',
 ];
 
 module.exports = (req, res, next) => {
   const { origin } = req.headers;
-  console.log(origin);
   const { method } = req;
   const requestHeaders = req.headers['access-control-request-headers'];
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';

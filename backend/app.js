@@ -2,7 +2,6 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const express = require('express');
-// const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const err = require('./middlewares/error');
@@ -13,7 +12,6 @@ const { requestLogger, errorLogger } = require('./middlewares/loger');
 const { PORT = 3000 } = process.env;
 
 const app = express();
-// app.use(cors({ origin: 'kazarinov.mesto.nomoredomains.icu' }));
 app.use(corsMiddleware);
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
