@@ -85,6 +85,7 @@ module.exports.createUser = (req, res, next) => {
 
 module.exports.updateUser = (req, res, next) => {
   const { name, about } = req.body;
+  console.dir(req.body);
   Users.findByIdAndUpdate(
     req.user._id,
     { name, about },
@@ -94,7 +95,10 @@ module.exports.updateUser = (req, res, next) => {
       upsert: false,
     },
   ).orFail(new NotFoundError(NOT_FOUND_USER_ID_MESSAGE))
-    .then((user) => res.send(user))
+    .then((user) => {
+      console.dir(user);
+      res.send(user);
+    })
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new IncorrectData(INCORRECT_DATA_MESSAGE));
