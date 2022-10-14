@@ -3,17 +3,18 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
-
+const cors = require('cors');
 const { errors } = require('celebrate');
 const err = require('./middlewares/error');
 const router = require('./routes');
-const corsMiddleware = require('./middlewares/cors');
+// const corsMiddleware = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/loger');
 
 const { PORT = 3000 } = process.env;
 
 const app = express();
-app.use(corsMiddleware);
+// app.use(corsMiddleware);
+app.use(cors());
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
 app.use(bodyParser.json());
