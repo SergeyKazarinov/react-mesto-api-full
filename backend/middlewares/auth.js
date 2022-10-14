@@ -12,6 +12,8 @@ module.exports = (req, res, next) => {
   } catch (err) {
     next(new AuthorizationError(NOT_REGISTERED_MESSAGE));
   }
+  console.log(req.cookies);
+  console.log(`token: ${token}`);
   req.user = payload;
   return next();
 };
