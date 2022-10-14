@@ -12,6 +12,7 @@ module.exports = (req, res, next) => {
   } catch (err) {
     next(new AuthorizationError(NOT_REGISTERED_MESSAGE));
   }
+  console.log(res.cookies);
   req.user = payload;
   return next();
 };
