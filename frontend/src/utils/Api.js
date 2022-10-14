@@ -8,9 +8,11 @@ class Api {
   _checkAnswer(res) {
     if(res.ok) {
       return res.json();
-    }else {
-      return Promise.reject(`Ошибка ${res.status}: ${res.statusText}`);
     }
+    return res.json().then((err) => {
+      err.statusCode = res.status;
+      return Promise.reject(err);
+    })
   }
 
   getInitialCards() {
@@ -111,7 +113,7 @@ class Api {
 const api = new Api({
   baseUrl: 'https://api.kazarinov.mesto.nomoredomains.icu',
   headers: {
-    // 'Content-Type': 'application/json'
+    'Content-Type': 'application/json'
   }
 });
 

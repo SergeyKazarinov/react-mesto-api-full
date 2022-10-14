@@ -36,12 +36,12 @@ function App({history}) {
   const [imageForInfoTooltip, setImageForInfoTooltip] = useState('');
   const [textForInfoTooltip, setTextForInfoTooltip] = useState('');
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      getUserEmail(token);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   if (token) {
+  //     getUserEmail(token);
+  //   }
+  // }, []);
 
   useEffect(() => {
     if(loggedIn){
@@ -104,8 +104,10 @@ function App({history}) {
   }
 
   function handleUpdateUser(userData) {
+    console.dir(userData)
     api.patchUserInfo(userData)
       .then((res) => {
+        console.dir(res);
         setCurrentUser(res);
       })
       .catch((err) => {
@@ -181,10 +183,15 @@ function App({history}) {
 
   const handleSignOut = async () => {
     if(localStorage.getItem('token')) {
-      const res = await signOut();
-      localStorage.removeItem('token')
-      setLoggedIn(false);
-      setUserEmail('');
+      try {
+        const res = await signOut();
+        localStorage.removeItem('token')
+        setLoggedIn(false);
+        setUserEmail('');
+      } catch (err) {
+        console.dir(err);
+      } 
+
     }
   }
 
