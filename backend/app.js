@@ -13,7 +13,7 @@ const { requestLogger, errorLogger } = require('./middlewares/loger');
 const { PORT = 3000 } = process.env;
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: 'kazarinov.mesto.nomoredomains.icu' }));
 
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
