@@ -40,8 +40,7 @@ export const getUserData = async (token) => {
     method: 'GET',
     credentials: 'include',
     headers: {
-      "Content-Type": "application/json",
-      "Authorization" : `Bearer ${token}`
+      "Content-Type": "application/json"
     }
   })
 
