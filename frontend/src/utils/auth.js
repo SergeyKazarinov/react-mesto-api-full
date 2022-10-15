@@ -3,9 +3,12 @@ const BASE_URL = 'https://api.kazarinov.mesto.nomoredomains.icu';
 const checkAnswer = (res) => {
   if(res.ok) {
     return res.json();
-  }else {
-    return Promise.reject(`Ошибка ${res.status}: ${res.statusText}`);
   }
+  
+  return res.json().then((err) => {
+    err.statusCode = res.status;
+    return Promise.reject(err);
+  })
 }
 
 export const register = async (email, password) => {

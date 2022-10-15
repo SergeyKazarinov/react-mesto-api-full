@@ -213,7 +213,7 @@ function App({history}) {
       setIsInfoTooltipPopupOpen(true);
       setImageForInfoTooltip(AcceptRegist);
       setTextForInfoTooltip("Вы успешно зарегистрировались!");
-      handleSignIn(res);
+      handleSignIn(email, password);
     } catch (err) {
       setIsInfoTooltipPopupOpen(true);
       setImageForInfoTooltip(RejectRegist);
