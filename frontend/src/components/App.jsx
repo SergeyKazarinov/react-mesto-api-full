@@ -36,12 +36,12 @@ function App({history}) {
   const [imageForInfoTooltip, setImageForInfoTooltip] = useState('');
   const [textForInfoTooltip, setTextForInfoTooltip] = useState('');
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   if (token) {
-  //     getUserEmail(token);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      getUserEmail(token);
+    }
+  }, []);
 
   useEffect(() => {
     if(loggedIn){
