@@ -200,10 +200,10 @@ function App({history}) {
       setUserEmail(email);
       setLoggedIn(true);
       history.push('/');
-    } catch {
+    } catch (err) {
       setIsInfoTooltipPopupOpen(true);
       setImageForInfoTooltip(RejectRegist);
-      setTextForInfoTooltip("Неверный Email или пароль");
+      setTextForInfoTooltip(err.message);
     }
   }
 
@@ -213,13 +213,11 @@ function App({history}) {
       setIsInfoTooltipPopupOpen(true);
       setImageForInfoTooltip(AcceptRegist);
       setTextForInfoTooltip("Вы успешно зарегистрировались!");
-      handleSignIn(email, password);
-      setLoggedIn(true);
-      history.push('/')
-    } catch {
+      handleSignIn(res);
+    } catch (err) {
       setIsInfoTooltipPopupOpen(true);
       setImageForInfoTooltip(RejectRegist);
-      setTextForInfoTooltip("Что-то пошло не так! Попробуйте ещё раз.");
+      setTextForInfoTooltip(err.message);
     }
   }
 
