@@ -11,7 +11,7 @@ function PopupWithForm({name, title, titleBtn, onSubmit, isValid, children}) {
             !isValid && "button_inactive"
           }`}
           value={titleBtn}
-          id="button-save"
+          id={`button-save-${name}`}
           disabled={!isValid}
         >
           {titleBtn}

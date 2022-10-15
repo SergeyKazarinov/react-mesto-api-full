@@ -104,10 +104,8 @@ function App({history}) {
   }
 
   function handleUpdateUser(userData) {
-    console.dir(userData)
     api.patchUserInfo(userData)
       .then((res) => {
-        console.dir(res);
         setCurrentUser(res);
       })
       .catch((err) => {
@@ -145,7 +143,7 @@ function App({history}) {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id);
     if(isLiked) {
       api.deleteLike(card)
         .then((newCard) => {
