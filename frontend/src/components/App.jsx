@@ -59,6 +59,8 @@ function App({history}) {
   const getUserEmail = async (token) => {
     try{
       const res = await getUserData(token);
+      console.log(res.data.email);
+      console.dir(res);
       if(res.data.email) {
         setUserEmail(res.data.email);
         setLoggedIn(true);
