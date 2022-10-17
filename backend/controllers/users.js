@@ -13,6 +13,7 @@ const {
 const { NODE_ENV, JWT_SECRET_KEY } = process.env;
 
 module.exports.login = (req, res, next) => {
+  console.log(NODE_ENV);
   const { email, password } = req.body;
   Users.findUserByCredentials(email, password)
     .then((user) => {

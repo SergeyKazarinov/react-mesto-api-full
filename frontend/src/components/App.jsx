@@ -36,12 +36,12 @@ function App({history}) {
   const [imageForInfoTooltip, setImageForInfoTooltip] = useState('');
   const [textForInfoTooltip, setTextForInfoTooltip] = useState('');
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      getUserEmail(token);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   if (token) {
+  //     getUserEmail(token);
+  //   }
+  // }, []);
 
   useEffect(() => {
     if(loggedIn){
@@ -64,7 +64,6 @@ function App({history}) {
         setLoggedIn(true);
         history.push('/')
       } else {
-        localStorage.removeItem('token')
         setLoggedIn(false);
       }
     } catch {
@@ -180,23 +179,18 @@ function App({history}) {
   }
 
   const handleSignOut = async () => {
-    if(localStorage.getItem('token')) {
-      try {
-        const res = await signOut();
-        localStorage.removeItem('token')
-        setLoggedIn(false);
-        setUserEmail('');
-      } catch (err) {
-        console.dir(err);
-      } 
-
-    }
+    try {
+      const res = await signOut();
+      setLoggedIn(false);
+      setUserEmail('');
+    } catch (err) {
+      console.dir(err);
+    } 
   }
 
   const handleSignIn = async ({email, password}) => {
     try{
       const res = await authorize(email, password);
-      localStorage.setItem('token', res.token);
       setUserEmail(email);
       setLoggedIn(true);
       history.push('/');
