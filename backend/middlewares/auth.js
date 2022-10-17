@@ -5,6 +5,7 @@ const { NOT_REGISTERED_MESSAGE } = require('../utils/constants');
 const { NODE_ENV, JWT_SECRET_KEY } = process.env;
 
 module.exports = (req, res, next) => {
+  console.log(NODE_ENV);
   const token = req.cookies.jwt;
   let payload;
   try {
