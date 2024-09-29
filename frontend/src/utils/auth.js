@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.kazarinov.mesto.nomoredomains.icu';
+const BASE_URL = 'https://api.mesto.kazarinov092.ru';
 
 const checkAnswer = (res) => {
   if(res.ok) {
