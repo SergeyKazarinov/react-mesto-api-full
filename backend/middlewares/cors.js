@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://kazarinov.mesto.nomoredomains.icu',
-  'http://kazarinov.mesto.nomoredomains.icu',
+  'https://mesto.kazarinov.ru',
+  'http://mesto.kazarinov.ru',
   'http://localhost:3000',
   'https://localhost:3000',
 ];
